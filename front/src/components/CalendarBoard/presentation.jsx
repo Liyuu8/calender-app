@@ -4,14 +4,10 @@ import { Typography } from '@material-ui/core';
 
 import * as styles from './style.css';
 import CalendarElement from '../CalendarElement';
-import { createCalendar } from '../../services/calendar';
-
-// カレンダー作成サービスにより、カレンダーのデータを作成する
-const calendar = createCalendar();
 
 const dayOfTheWeek = ['日', '月', '火', '水', '木', '金', '土'];
 
-const CalendarBoard = () => {
+const CalendarBoard = ({ calendar }) => {
   return (
     <div className={styles.container}>
       <GridList className={styles.grid} cols={7} spacing={0} cellHeight="auto">

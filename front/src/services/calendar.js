@@ -1,9 +1,9 @@
 import dayjs from 'dayjs';
 
-export const createCalendar = () => {
+export const createCalendar = (month) => {
   // 今月の最初の日を追加;
   // [Ex] $d: Fri May 01 2020 00:00:00 GMT+0900 (日本標準時)
-  const firstDay = dayjs().startOf('month');
+  const firstDay = getMonth(month);
 
   // 今月1日の曜日のindexを取得
   // [Ex] 金曜の場合：5
@@ -29,3 +29,7 @@ export const isSameMonth = (d1, d2) => {
 };
 
 export const isFirstDay = (day) => day.date() === 1;
+
+export const getMonth = ({ year, month }) => {
+  return dayjs(`${year}-${month}`);
+};
