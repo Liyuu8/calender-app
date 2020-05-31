@@ -18,3 +18,14 @@ export const createCalendar = () => {
       return day;
     });
 };
+
+export const isSameDay = (d1, d2) => {
+  const format = 'YYYYMMDD';
+  return d1.format(format) === d2.format(format);
+};
+
+export const isSameMonth = (d1, d2) => {
+  return d1.month() === d2.month();
+};
+
+export const isFirstDay = (day) => day.date() === 1;
