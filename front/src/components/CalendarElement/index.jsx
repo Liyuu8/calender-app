@@ -3,10 +3,15 @@ import { Typography } from '@material-ui/core';
 import dayjs from 'dayjs';
 
 import * as styles from './style.css';
-import { isFirstDay, isSameDay, isSameMonth } from '../../services/calendar';
+import {
+  isFirstDay,
+  isSameDay,
+  isSameMonth,
+  getMonth,
+} from '../../services/calendar';
 
 // カレンダーの日付の要素を返す
-const CalendarElement = ({ day }) => {
+const CalendarElement = ({ day, month }) => {
   const today = dayjs();
 
   // 月の最初の日のみ月情報を追加して表示する
@@ -16,7 +21,8 @@ const CalendarElement = ({ day }) => {
   const isToday = isSameDay(day, today);
 
   // 今月以外をグレーダウン
-  const isCurrentMonth = isSameMonth(day, today);
+  const currentMonth = getMonth(month);
+  const isCurrentMonth = isSameMonth(day, currentMonth);
   const textColor = isCurrentMonth ? 'textPrimary' : 'textSecondary';
 
   return (
