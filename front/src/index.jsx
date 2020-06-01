@@ -8,6 +8,8 @@ import CalendarBoard from './components/CalendarBoard/container';
 
 import dayjs from 'dayjs';
 import 'dayjs/locale/ja';
+import DayjsUtils from '@date-io/dayjs';
+import { MuiPickersUtilsProvider } from '@material-ui/pickers';
 
 import rootReducer from './redux/rootReducer';
 
@@ -17,8 +19,10 @@ dayjs.locale('ja');
 
 const App = () => (
   <Provider store={store}>
-    <Navigation />
-    <CalendarBoard />
+    <MuiPickersUtilsProvider utils={DayjsUtils}>
+      <Navigation />
+      <CalendarBoard />
+    </MuiPickersUtilsProvider>
   </Provider>
 );
 
