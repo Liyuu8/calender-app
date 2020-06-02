@@ -17,7 +17,7 @@ const mapDispatchToProps = (dispatch) => ({
   },
 });
 
-const margeProps = (stateProps, dispatchProps) => ({
+const mergeProps = (stateProps, dispatchProps) => ({
   month: getMonth(stateProps.calendar), // redux の state → dayjs
   setNextMonth: () => {
     const nextMonth = getNextMonth(stateProps.calendar);
@@ -37,5 +37,5 @@ const margeProps = (stateProps, dispatchProps) => ({
 export default connect(
   mapStateToProps,
   mapDispatchToProps,
-  margeProps
+  mergeProps
 )(Navigation);
