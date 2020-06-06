@@ -1,38 +1,13 @@
 import dayjs from 'dayjs';
 
-import { SCHEDULES_ADD_ITEM } from './actions';
+import {
+  SCHEDULES_ADD_ITEM,
+  SCHEDULES_FETCH_ITEM,
+  SCHEDULES_SET_LOADING,
+} from './actions';
 
 const init = {
-  items: [
-    {
-      id: 1,
-      title: 'テスト',
-      date: dayjs(),
-      location: '会議室',
-      description: '経営戦略について',
-    },
-    {
-      id: 2,
-      title: 'テスト2',
-      date: dayjs(),
-      location: '会議室',
-      description: '経営戦略について',
-    },
-    {
-      id: 3,
-      title: 'テスト3',
-      date: dayjs(),
-      location: '会議室',
-      description: '経営戦略について',
-    },
-    {
-      id: 4,
-      title: 'テスト4',
-      date: dayjs(),
-      location: '会議室',
-      description: '経営戦略について',
-    },
-  ],
+  items: [],
   isLoading: false,
 };
 
@@ -44,6 +19,17 @@ const schedulesReducer = (state = init, action) => {
       return {
         ...state,
         items: [...state.items, { ...payload, id: state.items.length + 1 }],
+      };
+    case SCHEDULES_FETCH_ITEM:
+      return {
+        ...state,
+        isLoading: false,
+        items: payload,
+      };
+    case SCHEDULES_SET_LOADING:
+      return {
+        ...state,
+        isLoading: true,
       };
     default:
       return state;
