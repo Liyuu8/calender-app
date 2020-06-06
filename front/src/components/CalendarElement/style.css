@@ -17,3 +17,9 @@
   color: #fff;
   border-radius: 50%;
 }
+
+.schedules {
+  overflow: scroll;
+  height: calc(18vh - 50px);
+  padding-left: 10px;
+}

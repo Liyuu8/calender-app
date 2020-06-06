@@ -10,8 +10,10 @@ import {
   getMonth,
 } from '../../services/calendar';
 
+import Schedule from '../Schedule';
+
 // カレンダーの日付の要素を返す
-const CalendarElement = ({ day, month }) => {
+const CalendarElement = ({ day, month, schedules }) => {
   const today = dayjs();
 
   // 月の最初の日のみ月情報を追加して表示する
@@ -38,6 +40,11 @@ const CalendarElement = ({ day, month }) => {
           {day.format(formattedDay)}
         </span>
       </Typography>
+      <div className={styles.schedules}>
+        {schedules.map((e) => (
+          <Schedule key={e.id} schedule={e} />
+        ))}
+      </div>
     </div>
   );
 };
