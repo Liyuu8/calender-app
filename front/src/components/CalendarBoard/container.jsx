@@ -8,6 +8,10 @@ import {
   addScheduleOpenDialog,
   addScheduleSetValue,
 } from '../../redux/addSchedule/actions';
+import {
+  currentScheduleOpenDialog,
+  currentScheduleSetItem,
+} from '../../redux/currentSchedule/actions';
 
 const mapStateToProps = (state) => ({
   calendar: state.calendar,
@@ -18,6 +22,12 @@ const mapdispatchToProps = (dispatch) => ({
   openAddScheduleDialog: (d) => {
     dispatch(addScheduleOpenDialog());
     dispatch(addScheduleSetValue({ date: d }));
+  },
+  openCurrentScheduleDialog: (schedule, e) => {
+    e.stopPropagation();
+
+    dispatch(currentScheduleOpenDialog());
+    dispatch(currentScheduleSetItem(schedule));
   },
 });
 

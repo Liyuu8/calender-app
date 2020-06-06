@@ -13,7 +13,7 @@ import {
 import Schedule from '../Schedule';
 
 // カレンダーの日付の要素を返す
-const CalendarElement = ({ day, month, schedules }) => {
+const CalendarElement = ({ day, month, schedules, ...props }) => {
   const today = dayjs();
 
   // 月の最初の日のみ月情報を追加して表示する
@@ -42,7 +42,7 @@ const CalendarElement = ({ day, month, schedules }) => {
       </Typography>
       <div className={styles.schedules}>
         {schedules.map((e) => (
-          <Schedule key={e.id} schedule={e} />
+          <Schedule key={e.id} schedule={e} {...props} />
         ))}
       </div>
     </div>

@@ -11,7 +11,7 @@ import {
 } from '@material-ui/core';
 import {
   LocationOnOutlined,
-  NoteOutlined,
+  NotesOutlined,
   AccessTime,
   Close,
 } from '@material-ui/icons';
@@ -37,6 +37,7 @@ const AddScheduleDialog = ({
 }) => {
   return (
     <Dialog open={isDialogOpen} onClose={closeDialog} maxWidth="xs" fullWidth>
+      {/* 閉じるボタン */}
       <DialogActions>
         <div className={styles.closeButton}>
           <IconButton onClick={closeDialog} size="small">
@@ -44,6 +45,7 @@ const AddScheduleDialog = ({
           </IconButton>
         </div>
       </DialogActions>
+
       <DialogContent>
         {/* タイトル */}
         <Title
@@ -89,7 +91,7 @@ const AddScheduleDialog = ({
         {/* 説明 */}
         <Grid container spacing={1} alignItems="center" justify="space-between">
           <Grid item>
-            <NoteOutlined />
+            <NotesOutlined />
           </Grid>
           <Grid item xs={11}>
             <TextField
@@ -102,6 +104,8 @@ const AddScheduleDialog = ({
           </Grid>
         </Grid>
       </DialogContent>
+
+      {/* 保存ボタン */}
       <DialogActions>
         <Button color="primary" variant="outlined" onClick={saveSchedule}>
           保存

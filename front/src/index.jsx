@@ -6,6 +6,7 @@ import { createStore } from 'redux';
 import Navigation from './components/Navigation/container';
 import CalendarBoard from './components/CalendarBoard/container';
 import AddScheduleDialog from './components/AddScheduleDialog/container';
+import CurrentScheduleDialog from './components/CurrentScheduleDialog/container';
 
 import dayjs from 'dayjs';
 import 'dayjs/locale/ja';
@@ -24,6 +25,7 @@ const App = () => (
       <Navigation />
       <CalendarBoard />
       <AddScheduleDialog />
+      <CurrentScheduleDialog />
     </MuiPickersUtilsProvider>
   </Provider>
 );
