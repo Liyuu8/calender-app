@@ -14,7 +14,7 @@ import {
   currentScheduleSetItem,
 } from '../../redux/currentSchedule/actions';
 
-import { asyncScheduleFetchItem } from '../../redux/schedules/effects';
+import { asyncSchedulesFetchItem } from '../../redux/schedules/effects';
 
 const mapStateToProps = (state) => ({
   calendar: state.calendar,
@@ -33,7 +33,7 @@ const mapdispatchToProps = (dispatch) => ({
     dispatch(currentScheduleSetItem(schedule));
   },
   fetchSchedule: (month) => {
-    dispatch(asyncScheduleFetchItem(month));
+    dispatch(asyncSchedulesFetchItem(month));
   },
 });
 

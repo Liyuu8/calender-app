@@ -10,7 +10,7 @@ import {
 } from '../../services/calendar';
 import { calendarSetMonth } from '../../redux/calendar/actions';
 
-import { asyncScheduleFetchItem } from '../../redux/schedules/effects';
+import { asyncSchedulesFetchItem } from '../../redux/schedules/effects';
 
 const mapStateToProps = (state) => ({ calendar: state.calendar });
 
@@ -19,7 +19,7 @@ const mapDispatchToProps = (dispatch) => ({
     dispatch(calendarSetMonth(month));
   },
   fetchItem: (month) => {
-    dispatch(asyncScheduleFetchItem(month));
+    dispatch(asyncSchedulesFetchItem(month));
   },
 });
 
