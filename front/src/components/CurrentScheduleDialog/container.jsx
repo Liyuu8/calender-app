@@ -1,9 +1,12 @@
 import { connect } from 'react-redux';
 
+// presentation
 import CurrentScheduleDialog from './presentation';
 
+// actions
 import { currentScheduleCloseDialog } from '../../redux/currentSchedule/actions';
 
+// effects
 import { asyncSchedulesDeleteItem } from '../../redux/schedules/effects';
 
 const mapStateToProps = (state) => ({
@@ -25,9 +28,6 @@ const mergeProps = (stateProps, dispatchProps) => ({
   ...dispatchProps,
   deleteItem: () => {
     const { id } = stateProps.schedule.item;
-
-    console.log('dispatchProps', dispatchProps);
-    console.log('====================================');
     dispatchProps.deleteItem(id);
   },
 

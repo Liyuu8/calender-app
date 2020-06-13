@@ -1,10 +1,13 @@
 import { connect } from 'react-redux';
 
+// presentation
+import CalendarBoard from './presentation';
+
+// services
 import { createCalendar } from '../../services/calendar';
 import { setSchedules } from '../../services/schedule';
 
-import CalendarBoard from './presentation';
-
+// actions
 import {
   addScheduleOpenDialog,
   addScheduleSetValue,
@@ -14,6 +17,7 @@ import {
   currentScheduleSetItem,
 } from '../../redux/currentSchedule/actions';
 
+// effects
 import { asyncSchedulesFetchItem } from '../../redux/schedules/effects';
 
 const mapStateToProps = (state) => ({

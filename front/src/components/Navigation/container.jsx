@@ -1,15 +1,20 @@
 import { connect } from 'react-redux';
 
+// presentation
 import Navigation from './presentation';
 
+// services
 import {
   getNextMonth,
   getPreviousMonth,
   getMonth,
   formatMonth,
 } from '../../services/calendar';
+
+// actions
 import { calendarSetMonth } from '../../redux/calendar/actions';
 
+// effects
 import { asyncSchedulesFetchItem } from '../../redux/schedules/effects';
 
 const mapStateToProps = (state) => ({ calendar: state.calendar });
