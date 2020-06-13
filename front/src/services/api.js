@@ -20,3 +20,11 @@ export const post = async (path, body) => {
 
   return result;
 };
+
+export const deleteRequest = async (path) => {
+  const options = { method: 'DELETE' };
+  // 204 No Content が返ってくるので、成功の場合は何も return しない
+  await fetch(url(path), options);
+
+  return;
+};
