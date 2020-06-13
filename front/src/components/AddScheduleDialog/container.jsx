@@ -7,6 +7,7 @@ import AddScheduleDialog from './presentation';
 import {
   addScheduleCloseDialog,
   addScheduleSetValue,
+  addScheduleStartEdit,
 } from '../../redux/addSchedule/actions';
 
 // effects
@@ -24,6 +25,9 @@ const mapDispatchToProps = (dispatch) => ({
   saveSchedule: (schedule) => {
     dispatch(asyncSchedulesAddItem(schedule));
     dispatch(addScheduleCloseDialog());
+  },
+  setIsEditStart: () => {
+    dispatch(addScheduleStartEdit());
   },
 });
 
