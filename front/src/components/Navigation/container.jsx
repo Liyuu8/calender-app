@@ -46,6 +46,14 @@ const mergeProps = (stateProps, dispatchProps) => ({
     dispatchProps.setMonth(month);
     dispatchProps.fetchItem(month);
   },
+
+  // stateProps
+  //   calendar:
+  //     month: 6
+  //     year: 2020
+  // dispatchProps
+  //   fetchItem: month => {…}
+  //   setMonth: month => {…}
 });
 
 export default connect(

@@ -56,6 +56,24 @@ const mergeProps = (stateProps, dispatchProps) => {
     calendar,
     month,
   };
+
+  // stateProps
+  //   calendar:
+  //     month: 6
+  //     year: 2020
+  //   schedules:
+  //     error: null
+  //     isLoading: true
+  //     items: Array(4)
+  //       0: {id: 1, date: c, title: "会議", description: "経営戦略会議", location: "会議室A"}
+  //       1: {id: 2, date: c, title: "会議", description: "経営戦略会議", location: "会議室A"}
+  //       2: {id: 3, date: c, title: "会議", description: "経営戦略会議", location: "会議室A"}
+  //       3: {id: 7, date: c, title: "title6", description: "description6", location: "location6"}
+  //       length: 4
+  // dispatchProps
+  //   fetchSchedule: month => {…}
+  //   openAddScheduleDialog: d => {…}
+  //   openCurrentScheduleDialog: (schedule, e) => {…}
 };
 
 export default connect(

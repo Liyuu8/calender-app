@@ -53,12 +53,12 @@ const mergeProps = (stateProps, dispatchProps) => {
     },
   };
 
-  // stateProps:
+  // stateProps
   //   schedule:
   //     form: {title: "test", description: "", date: c, location: ""}
   //     isDialogOpen: true
   //     isStartEdit: true
-  // dispatchProps:
+  // dispatchProps
   //   closeDialog: () => {…}
   //   saveSchedule: schedule => {…}
   //   setIsEditStart: () => {…}

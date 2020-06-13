@@ -31,7 +31,7 @@ const mergeProps = (stateProps, dispatchProps) => ({
     dispatchProps.deleteItem(id);
   },
 
-  // stateProps:
+  // stateProps
   //   schedule:
   //     isDialogOpen: true
   //     item:
@@ -40,8 +40,7 @@ const mergeProps = (stateProps, dispatchProps) => ({
   //       id: 6
   //       location: "location1"
   //       title: "title1"
-
-  // dispatchProps:
+  // dispatchProps
   //   closeDialog: () => {…}
   //   deleteItem: id => {…}
 });
